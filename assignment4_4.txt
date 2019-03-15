@@ -1,0 +1,60 @@
+1. Use the package RcmdrPlugin.IPSUR.
+data(RcmdrTestDrive)
+and perform the below operations:
+a. Calculate the average salary by gender and smoking status.
+  Ans:
+     >data1<-RcmdrTestDrive
+     >head(data1)
+     >fesal<-data1[data1$gender=="Female" , ]
+     >fem<-data.frame(fesal$gender,fesal$salary,fesal$smoking)
+
+     >masal<-data1[data1$gender=="Male" , ]
+     >male<-data.frame(masal$gender,masal$salary,masal$smoking)  
+
+    
+     > mean(fesal$salary)#female average salary
+       [1] 698.0911
+     > mean(masal$salary)#male average salary
+      [1] 743.3915
+
+
+
+
+b. Which gender has the highest mean salary?
+   Ans:
+      male gendar has highest mean salary.
+c. Report the highest mean salary.
+   Ans:
+      743.3915
+d. Compare the spreads for the genders by calculating the standard deviation of salary by gender.
+
+    Ans:
+       To get the measures of spread you can use variance, 
+            standard deviation, interquartile range (IQR), 
+                             minimum value, maximum value, 
+                                                range etc.
+     spread of salary for female gender
+
+     > range(fem$fesal.salary)
+      [1]  377.17 1025.09
+
+      > sd(fem$fesal.salary)
+      [1] 130.7053
+
+      > mean(fesal$salary)   #center of spread of salary for female gender
+       [1] 698.0911
+
+     spread of salary for male gender
+
+      > range(male$masal.salary)
+       [1]  387.59 1156.16
+
+      > sd(male$masal.salary)
+       [1] 158.5423
+
+      > mean(masal$salary)  #center of spread of salary for male gender
+       [1] 743.3915
+
+
+
+
